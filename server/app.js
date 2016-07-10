@@ -17,8 +17,7 @@ app.get('/sports', (request, response) => {
     if (err) {
       response.sendStatus(400);
     }
-
-    console.log(JSON.stringify(docs));
+    
     let sportNames = docs.map((sport) => sport.name);
     response.json(sportNames);
   });
@@ -32,7 +31,6 @@ app.get('/sports/:name', (request, response) => {
     if (err) {
       response.sendStatus(400);
     }
-      console.log("Sport: ", doc);
       response.json(doc);
   });
 
